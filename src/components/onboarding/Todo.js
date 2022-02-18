@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
-// import { IconButton, TrashIcon, TickIcon, majorScale } from "evergreen-ui";
 
 const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
