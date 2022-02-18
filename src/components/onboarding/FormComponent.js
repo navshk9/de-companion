@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 const FormComponent = ({ setInputText, inputText, setStatus, fetchData }) => {
@@ -10,7 +9,7 @@ const FormComponent = ({ setInputText, inputText, setStatus, fetchData }) => {
   // handler for setting todo item
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    fetch("https://todoapi-dev.azurewebsites.net/api/todo", {
+    fetch("/api/todo", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: inputText, completed: false }),

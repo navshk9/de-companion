@@ -3,13 +3,15 @@ import React, { Component } from "react";
 export default class Home extends Component {
   render() {
     return (
-      <>
-        <h1>Home</h1>
-        <div>
-          Welcome to DE Componion! If you are a new-hire, please check the
-          "Tasks" tab at the top for onboarding tasks.
-        </div>
-      </>
+      <div className="home-container">
+        <header>
+          <h1 className="home-title">Home</h1>
+        </header>
+        <h4 className="home-text">
+          Welcome! Click on the "Tasks" link in the navigation bar to see all
+          your onboarding tasks.
+        </h4>
+      </div>
     );
   }
 }

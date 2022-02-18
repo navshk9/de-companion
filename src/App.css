@@ -8,6 +8,20 @@
   margin: 0 auto;
 }
 
+.home-title {
+  display: flex;
+  justify-content: center;
+  color: #ffaaa7;
+  padding: 2rem;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  color: #98ddca;
+  padding: 2rem;
+}
+
 .todo-title {
   display: flex;
   justify-content: center;

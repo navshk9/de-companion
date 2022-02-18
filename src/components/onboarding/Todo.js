@@ -5,7 +5,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
     todos.map((item) => {
       if (item.id === todo.id) {
-        fetch(`https://todoapi-dev.azurewebsites.net/api/todo/${item.id}`, {
+        fetch(`/api/todo/${item.id}`, {
           method: "DELETE",
         }).then(() => {
           console.log("deleted successfully.");
@@ -20,7 +20,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
-          fetch(`https://todoapi-dev.azurewebsites.net/api/todo/${item.id}`, {
+          fetch(`/api/todo/${item.id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...item, completed: !item.completed }),

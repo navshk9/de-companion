@@ -18,7 +18,7 @@ const TodoContainer = () => {
   }, []);
 
   function fetchData() {
-    fetch("https://todoapi-dev.azurewebsites.net/api/todo")
+    fetch("/api/todo")
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }
