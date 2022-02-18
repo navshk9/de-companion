@@ -1,3 +1,4 @@
+import React from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 const FormComponent = ({ setInputText, inputText, setStatus, fetchData }) => {

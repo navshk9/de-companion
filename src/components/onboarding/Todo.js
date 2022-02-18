@@ -1,5 +1,7 @@
 import React from "react";
-import { IconButton, TrashIcon, TickIcon, majorScale } from "evergreen-ui";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+// import { IconButton, TrashIcon, TickIcon, majorScale } from "evergreen-ui";
 
 const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
@@ -41,19 +43,12 @@ const Todo = ({ text, todo, todos, setTodos }) => {
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {text}
       </li>
-      <IconButton
-        onClick={completeHandler}
-        className="complete-btn"
-        icon={TickIcon}
-        intent="success"
-      />
-      <IconButton
-        onClick={deleteHandler}
-        className="trash-btn"
-        icon={TrashIcon}
-        intent="danger"
-        marginRight={majorScale(2)}
-      />
+      <button className="complete-btn" onClick={completeHandler}>
+        <FontAwesomeIcon icon={faSquareCheck}></FontAwesomeIcon>
+      </button>
+      <button className="trash-btn" onClick={deleteHandler}>
+        <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+      </button>
     </div>
   );
 };

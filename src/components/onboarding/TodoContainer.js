@@ -23,8 +23,6 @@ const TodoContainer = () => {
       .then((data) => setTodos(data));
   }
 
-  // TODO: create a side effect to save todo list items to API whenever todos state changes
-
   // side effects
   useEffect(() => {
     filterHandler();
