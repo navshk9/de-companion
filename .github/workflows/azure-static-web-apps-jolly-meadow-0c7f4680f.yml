@@ -20,7 +20,7 @@ jobs:
           submodules: true
       - name: Build And Deploy
         id: builddeploy
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: "16"
         uses: Azure/static-web-apps-deploy@v1
