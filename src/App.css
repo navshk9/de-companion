@@ -58,3 +58,25 @@
 .todo-item {
   padding: 0rem 0.5rem;
 }
+
+.complete-btn {
+  background-color: #98ddca;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+.trash-btn {
+  background-color: #ffaaa7;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+.trash-btn:hover {
+  background-color: #db8784;
+}
+
+.complete-btn:hover {
+  background-color: #6bb5a1;
+}
