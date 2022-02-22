@@ -17,7 +17,8 @@ export async function callApi({
     },
     onUploadProgress,
     method,
-    url: `${REACT_APP_API_URL}${url}`,
+    // url: `${REACT_APP_API_URL}${url}`,
+    url: `https://apim-decompanion-dev-use2.azure-api.net/todo${url}`,
     data: data || null,
     cancelToken: cancelTokenSource && cancelTokenSource.token,
   }).catch((err) => {
