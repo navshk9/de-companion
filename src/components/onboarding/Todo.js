@@ -1,16 +1,15 @@
 import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+
+import TodoService from "../../services/TodoService";
 
 const Todo = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
     todos.map((item) => {
       if (item.id === todo.id) {
-        fetch(`/api/todo/${item.id}`, {
-          method: "DELETE",
-        }).then(() => {
-          console.log("deleted successfully.");
-        });
+        TodoService.delete(todo.id);
       }
     });
     // matching clicked element with element from state
@@ -21,13 +20,11 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
-          fetch(`/api/todo/${item.id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...item, completed: !item.completed }),
-          }).then(() => {
-            console.log("updated successfully.");
+          const newData = JSON.stringify({
+            ...item,
+            completed: !item.completed,
           });
+          TodoService.put(newData);
           return {
             ...item,
             completed: !item.completed,

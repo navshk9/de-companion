@@ -8,6 +8,8 @@ import TodoContainer from "./components/onboarding/TodoContainer";
 import NotFound from "./components/common/NotFound";
 import Navigation from "./components/common/Navigation";
 
+require("dotenv").config();
+
 function App() {
   return (
     <div className="App">

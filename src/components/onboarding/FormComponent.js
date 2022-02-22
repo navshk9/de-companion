@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
+import TodoService from "../../services/TodoService";
+
 const FormComponent = ({ setInputText, inputText, setStatus, fetchData }) => {
   // handler for setting input text
   const inputTextHandler = (e) => {
@@ -10,14 +12,9 @@ const FormComponent = ({ setInputText, inputText, setStatus, fetchData }) => {
   // handler for setting todo item
   const submitTodoHandler = (e) => {
     e.preventDefault();
-    fetch("/api/todo", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: inputText, completed: false }),
-    }).then(() => {
-      // get updated todos list with the id number set by cosmos db
-      fetchData();
-    });
+
+    const newData = JSON.stringify({ text: inputText, completed: false });
+    TodoService.post(newData).then(() => fetchData());
     setInputText("");
   };
 

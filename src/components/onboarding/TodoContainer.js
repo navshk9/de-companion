@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 // importing components
 import FormComponent from "./FormComponent";
 import TodoList from "./TodoList";
-import Spinner from "../common/Spinner";
+
+import TodoService from "../../services/TodoService";
 
 const TodoContainer = () => {
   // states
@@ -18,9 +19,7 @@ const TodoContainer = () => {
   }, []);
 
   function fetchData() {
-    fetch("/api/todo")
-      .then((response) => response.json())
-      .then((data) => setTodos(data));
+    TodoService.get().then((res) => setTodos(res.data));
   }
 
   // side effects
