@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 // importing components
-import FormComponent from "./FormComponent";
 import TodoList from "./TodoList";
+import Header from "../common/Header";
 
+import SpeechRecognition from "./SpeechRecognition";
 import TodoService from "../../services/TodoService";
 
 const TodoContainer = () => {
@@ -12,6 +13,7 @@ const TodoContainer = () => {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [listening, setListening] = useState(false);
 
   // side effect to load todo list items from API and set todos state on inital load
   useEffect(() => {
@@ -42,14 +44,14 @@ const TodoContainer = () => {
   };
   return (
     <div className="todo-container">
-      <header>
-        <h1 className="todo-title">Onboarding Checklist</h1>
-      </header>
-      <FormComponent
+      <Header title="Tasks" />
+      <SpeechRecognition
         inputText={inputText}
         setInputText={setInputText}
-        setStatus={setStatus}
         fetchData={fetchData}
+        listening={listening}
+        setListening={setListening}
+        setStatus={setStatus}
       />
       <TodoList
         setTodos={setTodos}

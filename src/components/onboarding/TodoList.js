@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-// comment
+
 const TodoList = ({ todos, setTodos, filteredTodos }) => {
   return (
     <div className="todo-list-container">

@@ -8,24 +8,17 @@
   margin: 0 auto;
 }
 
-.home-title {
-  display: flex;
-  justify-content: center;
-  color: #ffaaa7;
-  padding: 2rem;
-}
-
 .home-text {
   display: flex;
   justify-content: center;
-  color: #98ddca;
+  color: #3b88d1;
   padding: 2rem;
 }
 
 .todo-title {
   display: flex;
   justify-content: center;
-  color: #ffaaa7;
+  color: #3b88d1;
   padding: 2rem;
 }
 
@@ -41,7 +34,7 @@
 }
 
 .todo {
-  background-color: #d5ecc2;
+  background-color: #fef9ef;
   margin: 0.5rem;
   display: flex;
   font-size: 1.8rem;
@@ -60,23 +53,15 @@
 }
 
 .complete-btn {
-  background-color: #98ddca;
-  color: white;
+  background-color: #3b88d1;
+  color: #fee440;
   padding: 1rem;
   border: none;
 }
 
 .trash-btn {
-  background-color: #ffaaa7;
-  color: white;
+  background-color: #fee440;
+  color: #3b88d1;
   padding: 1rem;
   border: none;
-}
-
-.trash-btn:hover {
-  background-color: #db8784;
-}
-
-.complete-btn:hover {
-  background-color: #6bb5a1;
 }
