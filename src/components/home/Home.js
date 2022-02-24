@@ -8,7 +8,7 @@ export default class Home extends Component {
         <Header title="Home" />
         <h4 className="home-text">
           Welcome! Click on the "Tasks" link in the navigation bar to see all
-          your onboarding tasks
+          your onboarding tasks.
         </h4>
       </div>
     );
