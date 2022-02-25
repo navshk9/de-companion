@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // importing components
 import TodoList from "./TodoList";
 import Header from "../common/Header";
-import { useFeatureFlag } from "../../useFeatureFlag";
+// import { useFeatureFlag } from "../../useFeatureFlag";
 
 import SpeechRecognition from "./SpeechRecognition";
 import TodoService from "../../services/TodoService";
@@ -16,7 +16,7 @@ const TodoContainer = () => {
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [listening, setListening] = useState(false);
 
-  const { enabled: flag } = useFeatureFlag("speechRecognitionFlag"); // The feature flag key from App Config
+  // const { enabled: flag } = useFeatureFlag("speechRecognitionFlag"); // The feature flag key from App Config
 
   // side effect to load todo list items from API and set todos state on inital load
   useEffect(() => {
@@ -49,16 +49,14 @@ const TodoContainer = () => {
     <div className="todo-container">
       <Header title="Tasks" />
 
-      {flag && (
-        <SpeechRecognition
-          inputText={inputText}
-          setInputText={setInputText}
-          fetchData={fetchData}
-          listening={listening}
-          setListening={setListening}
-          setStatus={setStatus}
-        />
-      )}
+      <SpeechRecognition
+        inputText={inputText}
+        setInputText={setInputText}
+        fetchData={fetchData}
+        listening={listening}
+        setListening={setListening}
+        setStatus={setStatus}
+      />
 
       <TodoList
         setTodos={setTodos}
