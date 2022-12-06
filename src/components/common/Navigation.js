@@ -1,9 +1,15 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./Navigation.css";
 
+// msal imports
+import { useIsAuthenticated, useMsal } from "@azure/msal-react";
+import { SignInButton } from "./SignInButton";
+import { SignOutButton } from "./SignOutButton";
+
 export default function Navigation() {
+  const isAuthenticated = useIsAuthenticated();
+  const { accounts } = useMsal();
   return (
     <Navbar variant="default" style={{ background: "#3b88d1" }}>
       <Container>
@@ -11,9 +17,10 @@ export default function Navigation() {
           <h1 style={{ color: "#fee440" }}>DE Companion</h1>
         </Navbar.Brand>
         <Nav className="me-auto nav-text">
-          <Link to="/">Home</Link>
-          <Link to="/tasks">Tasks</Link>
+          <a href="/">Home</a>
+          <a href="/tasks">Tasks</a>
         </Nav>
+        {isAuthenticated ? <SignOutButton /> : <SignInButton />}
       </Container>
     </Navbar>
   );

@@ -4,7 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/home/Home";
-import TodoContainer from "./components/onboarding/TodoContainer";
+import TodoContainer from "./components/todo/TodoContainer";
 import NotFound from "./components/common/NotFound";
 import Navigation from "./components/common/Navigation";
 
